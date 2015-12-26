@@ -1,8 +1,12 @@
 ﻿# Animate Stylus NPM
 *Just-add-water CSS animation*
 
-## disclaimer
+## Disclaimer
 So this is a fork of a fork. [slang800](https://github.com/slang800/animate-stylus) and [Dan Eden](https://github.com/daneden/animate.css) deserve credit for their work on this, but I will be making some potentially substantial changes here.
+
+## Install
+
+`npm install animate-stylus-npm`
 
 ## Usage
 To use animate-stylus-npm in your website, just `@import animate-stylus` and reference the animations you want in your style-sheet. That's it! You've got a CSS animated element. Super!
