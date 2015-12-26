@@ -1,4 +1,25 @@
 {
-  "name": "animate-stylus",
-  "version": "3.0.0"
+  "name": "animate-stylus-npm",
+  "version": "1.0.0",
+  "description": "animate-stylus-npm helps you use animate.css in your project easily",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sébastien Demanou",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/demsking/animate-stylus-npm.git"
+  },
+  "keywords": [
+    "stylus",
+    "animate.css",
+    "animation",
+    "css"
+  ],
+  "bugs": {
+    "url": "https://github.com/demsking/animate-stylus-npm/issues"
+  },
+  "homepage": "https://github.com/demsking/animate-stylus-npm#readme"
 }
