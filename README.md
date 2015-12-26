@@ -39,7 +39,7 @@ gulp.task('stylus', function() {
         .pipe(stylus({
             include: [animate.path],
         }))
-        .pipe(gulp.dest('./dist))
+        .pipe(gulp.dest('./dist'))
 });
 ```
 
