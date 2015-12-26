@@ -1,19 +1,46 @@
-﻿# Animate Stylus
+﻿# Animate Stylus NPM
 *Just-add-water CSS animation*
 
-`animate-stylus-npm` is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.
+## disclaimer
+So this is a fork of a fork. [slang800](https://github.com/slang800/animate-stylus) and [Dan Eden](https://github.com/daneden/animate.css) deserve credit for their work on this, but I will be making some potentially substantial changes here.
 
 ## Usage
-To use animate-stylus-npm in your website, just `@import animate-stylus-npm` and reference the animations you want in your style-sheet. That's it! You've got a CSS animated element. Super!
+To use animate-stylus-npm in your website, just `@import animate-stylus` and reference the animations you want in your style-sheet. That's it! You've got a CSS animated element. Super!
 
 ```stylus
-@import 'animate-stylus-npm'
+@require 'animate-stylus'
 
 #yourElement
   animation-name: bounceOutLeft
   animation-duration: 3s
   animation-delay: 2s
   animation-iteration-count: infinite
+```
+
+And in your js file:
+
+```javascript
+var stylus = require('stylus')
+  , animate = require('animate-stylus-npm');
+
+stylus(str)
+  .include(animate.path)
+  .render(...)
+```
+
+Or by using `gulp`:
+
+```javascript
+// gulpfile.js
+var animate = require('animate-stylus-npm');
+
+gulp.task('stylus', function() {
+    return gulp.src('./src/stylus/style.styl')
+        .pipe(stylus({
+            include: [animate.path],
+        }))
+        .pipe(gulp.dest('./dist))
+});
 ```
 
 You can do a whole bunch of other stuff with animate-stylus-npm when you combine it with jQuery or add your own CSS rules. Dynamically add animations using jQuery with ease:
@@ -36,7 +63,7 @@ $('#yourElement').one('webkitAnimationEnd mozAnimationEnd oAnimationEnd animatio
 ```
 
 ##Include/Exclude Animations
-There's no need to make custom builds because with Stylus you can import everything you want, and nothing you don't. For example, if you only use the `slideInDown` animation then don't `@import` the whole library - just `@import 'animate-stylus-npm/sliders/slideInDown'`. Or, if you want all the sliders, you can `@import 'animate-stylus-npm/sliders/*'`. See the Stylus Docs for an explanation of [file globbing](http://learnboost.github.io/stylus/docs/import.html#file-globbing).
+There's no need to make custom builds because with Stylus you can import everything you want, and nothing you don't. For example, if you only use the `slideInDown` animation then don't `@import` the whole library - just `@import 'animate-stylus/sliders/slideInDown'`. Or, if you want all the sliders, you can `@import 'animate-stylus/sliders/*'`. See the Stylus Docs for an explanation of [file globbing](http://learnboost.github.io/stylus/docs/import.html#file-globbing).
 
 ##Vendor Prefixes
 I've left the code unprefixed so you can support whatever browsers you're targeting without having them chosen for you. I recommend using [nib](http://visionmedia.github.io/nib/) or [auto-prefixer](https://github.com/ai/autoprefixer) to add the prefixes.
